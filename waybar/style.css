@@ -43,12 +43,14 @@ window#waybar {
 
 #custom-icon {
   padding: 10px 5px;
+  background-color: @water_blue;
   color: @text_color;
 }
 
 #custom-weather {
   padding: 10px 10px;
   margin-left: 10px;
+  background-color: @mountain_grey;
   color: @text_color;
 }
 
