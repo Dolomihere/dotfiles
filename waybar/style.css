@@ -91,14 +91,27 @@ window#waybar {
   background-color: @battery;
 }
 
-/* #battery.warning {
-  color: @warning;
+#battery.warning {
+  color: khaki;
 }
 
 #battery.critical {
-  color: brown;
-} */
+  color: salmon;
+}
+
+#battery.charging, #battery.plugged {
+  color: @text_color;
+}
 
 #disk {
   background-color: @storage;
+}
+
+menu {
+  background: @mountain_grey;
+	color: @text_color;
+}
+
+menuitem:hover {
+  background-color: @sky_orange;
 }
