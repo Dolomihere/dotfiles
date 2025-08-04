@@ -30,10 +30,10 @@ output * bg ~/Downloads/material-lake.png fill
 #sway
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
+exec swayidle -w \
+          timeout 300 'swaylock -f -c 000000' \
+          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+          before-sleep 'swaylock -f -c 000000'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -52,9 +52,6 @@ output * bg ~/Downloads/material-lake.png fill
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-
-exec wl-paste --type text --watch cliphist store &
-exec wl-paste --type image --watch cliphist store &
 
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
@@ -149,25 +146,10 @@ bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ t
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 
-bindsym Print exec grim
+bindsym Print exec grimshot copy screen
 
 bar {
   swaybar_command waybar
-}
-
-set $exit "exit: [s]leep, [p]oweroff, [r]eboot, [l]ogout, [w]indows"
-mode $exit {
-    bindsym --to-code {
-        s exec systemctl suspend, mode "default"
-        p exec systemctl poweroff
-        r exec systemctl reboot
-        l exec swaymsg exit
-        w exec reboot-to-windows-somehow-lol.sh
-    
-        Return mode "default"
-        Escape mode "default"
-        $mod+x mode "default"
-    }
 }
 
 bindsym --to-code $mod+x mode $exit
