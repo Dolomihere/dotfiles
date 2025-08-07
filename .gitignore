@@ -4,6 +4,8 @@ chromium/
 dconf/
 gtk-3.0/
 ibus/
+fcitx/
+fcitx5/
 pulse/
 systemd/
 user-dirs.dirs
