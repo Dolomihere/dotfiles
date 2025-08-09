@@ -51,6 +51,18 @@
     "on-scroll-up": "brightnessctl set +1%",
     "on-scroll-down": "brightnessctl set 1%-"
   },
+  
+  "network": {
+    "interface": "wlp2s0",
+    "format": "{ifname}",
+    "format-wifi": "{essid} ",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "format-disconnected": "Disconnected",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "tooltip-format-wifi": "{ipaddr} ({signalStrength}%)",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Disconnected"
+  },
 
   "cpu": {
     "format": "{usage}% ",
@@ -84,18 +96,6 @@
       "plugged": [""]
     },
     "interval": 45
-  },
-
-  "network": {
-    "interface": "wlp2s0",
-    "format": "{ifname}",
-    "format-wifi": "{essid} ",
-    "format-ethernet": "{ipaddr}/{cidr} ",
-    "format-disconnected": "",
-    "tooltip-format": "{ifname} via {gwaddr}",
-    "tooltip-format-wifi": "{ipaddr} {signalStrength}%",
-    "tooltip-format-ethernet": "{ifname} ",
-    "tooltip-format-disconnected": "Disconnected"
   },
 
   "disk": {

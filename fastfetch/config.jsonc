@@ -16,22 +16,22 @@
   "modules": [
     {
       "type": "os",
-      "key": "  OS",
+      "key": " OS",
       "keyColor": "magenta"
     },
     {
       "type": "packages",
-      "key": "  Packages",
+      "key": " Packages",
       "keyColor": "magenta"
     },
     {
       "type": "uptime",
-      "key": "  Uptime",
+      "key": " Uptime",
       "keyColor": "magenta"
     },
     {
       "type": "command",
-      "key": "  OS Age",
+      "key": " OS Age",
       "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days",
       "keyColor": "magenta"
     }
