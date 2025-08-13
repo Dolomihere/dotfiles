@@ -17,7 +17,7 @@ set $menu wmenu-run
 
 set $web-browser firefox
 
-set $lock 'swaylock -f --color "dae8e0" --image ~/Pictures/bird-on-branches.png --scaling fill'
+set $lock 'swaylock -f --color "dae8e0" --image ~/Pictures/blue-screen.jpg --scaling fill'
 
 # Exec program once at the start
 exec fcitx5 -dr
@@ -25,7 +25,7 @@ exec systemctl --user import-environment
 
 # output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # mode output "stretch", "fill", "fit", "center", "tile"
-output * bg ~/Pictures/remove-french.jpg center
+output * bg ~/Pictures/remove-french.jpg fill
 
 # Example configuration:
 #

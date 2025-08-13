@@ -103,6 +103,12 @@
       "outputColor": "blue"
     },
     {
+      "type": "terminalfont",
+      "key": "  Font ",
+      "keyColor": "red",
+      "outputColor": "red"
+    },
+    {
       "type": "wm",
       "key": "  Wm ",
       "keyColor": "green",
@@ -111,8 +117,8 @@
     {
       "type": "uptime",
       "key": "  Uptime ",
-      "keyColor": "magenta",
-      "outputColor": "magenta"
+      "keyColor": "yellow",
+      "outputColor": "yellow"
     },
     {
       "type": "command",
@@ -127,7 +133,9 @@
     },
     {
       "type": "colors",
+      "key": "  Color ",
       "paddingLeft": 2,
+      "keyColor": "default",
       "symbol": "circle"
     },
     {
