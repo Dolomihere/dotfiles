@@ -17,7 +17,7 @@
   "display": {
     "separator": ": ",
     "constants": [
-      "───────────────────"
+      "──────────────────────────"
     ],
     "key": {
       "type": "string",
@@ -36,6 +36,12 @@
       "key": "󰌢  Host ",
       "keyColor": "cyan",
       "outputColor": "cyan"
+    },
+    {
+      "type": "monitor",
+      "key": "󰍹  Res ",
+      "keyColor": "white",
+      "outputColor": "white"
     },
     {
       "type": "cpu",
@@ -103,12 +109,6 @@
       "outputColor": "blue"
     },
     {
-      "type": "terminalfont",
-      "key": "  Font ",
-      "keyColor": "red",
-      "outputColor": "red"
-    },
-    {
       "type": "wm",
       "key": "  Wm ",
       "keyColor": "green",
@@ -129,12 +129,17 @@
     },
     {
       "type": "custom",
-      "format": "├{$1}──────────────────────{$1}┤"
+      "format": "├{$1} {#1}Current Linux Themes{#} {$1}┤"
+    },
+    {
+      "type": "terminalfont",
+      "key": "  Font ",
+      "keyColor": "red",
+      "outputColor": "red"
     },
     {
       "type": "colors",
       "key": "  Color ",
-      "paddingLeft": 2,
       "keyColor": "default",
       "symbol": "circle"
     },

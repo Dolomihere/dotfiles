@@ -1,31 +1,60 @@
-# Colors
+# Colors                border  bg      text    indi    c_border
 client.focused          #5c6370 #5c6370 #ffffff #2c2c2c #5c6370
 client.unfocused        #2c2c2c #2c2c2c #888888 #2c2c2c #2c2c2c
 client.focused_inactive #3c3c3c #3c3c3c #aaaaaa #2c2c2c #3c3c3c
 client.urgent           #ff5555 #ff5555 #ffffff #ff5555 #ff5555
 
+# Display status bar
+bar {
+  swaybar_command waybar
+}
+
+for_window {
+  [title="game-*"] floating enable, resize set 1920 1080
+  [title="app-*"] floating enable, resize set 1920 1080
+}
+
+# Key mode 'windows key'
 set $mod Mod4
 
+# Vim key bind type
 set $left h
 set $down j
 set $up k
 set $right l
 
+# Terminal
 set $term kitty
 
+# Search menu
 set $menu wmenu-run
 
+# Browser
 set $web-browser firefox
 
-set $lock 'swaylock -f --color "dae8e0" --image ~/Pictures/blue-screen.jpg --scaling fill'
+# Set wallpaper
+set $bg-wall 'barrel-rifle.jpg'
+set $lock-wall 'blue-screen.jpg'
 
-# Exec program once at the start
+# Swaylock config
+set $lock 'swaylock -f --color "dae8e0" --image ~/Pictures/$lock-wall --scaling fill'
+
+# Exec program once at the start of sway session
 exec fcitx5 -dr
 exec systemctl --user import-environment
 
 # output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # mode output "stretch", "fill", "fit", "center", "tile"
-output * bg ~/Pictures/remove-french.jpg fill
+output * bg ~/Pictures/$bg-wall fit
+
+# setting only this monitor, use * for apply all other display
+output eDP-1 {
+  mode 1920x1080@60Hz
+  position 0,0
+  scale 1
+  transform normal
+  adaptive_sync off
+}
 
 # Example configuration:
 #
@@ -60,6 +89,26 @@ exec swayidle -w \
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
+# Touchpad settings
+input "1102:4619:DLL07B0:01_044E:120B" {
+  tap enabled               # Enable tap-to-click
+  natural_scroll enabled    # Reverse scroll (like macOS)
+  middle_emulation enabled  # Two-finger = middle click
+  scroll_method two_finger  # Two-finger scrolling
+  pointer_accel 0.2         # Adjust pointer speed (-1.0 to 1.0)
+  drag enabled              # Tap + move = drag
+  drag_lock enabled         # Keeps dragging until you lift finger
+}
+
+# My keyboard have middle track point
+input "1102:4619:DualPoint_Stick" {
+  pointer_accel -0.2
+}
+
+# Key bind for custom applications
+bindsym --no-repeat Print exec grimshot --cursor copy anything
+
+# Sway key bind from here on
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu
@@ -130,32 +179,28 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 mode "resize" {
-  bindsym $left resize shrink width 10px
-  bindsym $down resize grow height 10px
-  bindsym $up resize shrink height 10px
-  bindsym $right resize grow width 10px
+  bindsym $left resize shrink width 80px
+  bindsym $down resize grow height 80px
+  bindsym $up resize shrink height 80px
+  bindsym $right resize grow width 80px
 
-  bindsym Left resize shrink width 10px
-  bindsym Down resize grow height 10px
-  bindsym Up resize shrink height 10px
-  bindsym Right resize grow width 10px
+  bindsym Left resize shrink width 80px
+  bindsym Down resize grow height 80px
+  bindsym Up resize shrink height 80px
+  bindsym Right resize grow width 80px
 
+  bindsym $mod+r mode "default"
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
 
-bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
-bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
-bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
-bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+# I hadn't set up volume yet ...
+# bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+# bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+# bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+# bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
 
+# Keybind for light display up and down mine is F11 and F12 using Fn bind
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-
-bindsym Print exec grimshot copy screen
-
-bar {
-  swaybar_command waybar
-}
-

@@ -36,6 +36,10 @@
   color: @bg;
 }
 
+#workspaces button.urgent {
+  background-color: salmon;
+}
+
 window#waybar {
   background-color: transparent;
   color: @text_color;

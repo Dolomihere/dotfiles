@@ -1,5 +1,6 @@
 # List of git ignore file upload to github that in config i don't need
 
+Awesomeness/
 chromium/
 dconf/
 gtk-3.0/
@@ -7,6 +8,7 @@ ibus/
 fcitx/
 fcitx5/
 pulse/
+QtProject.conf
 systemd/
 user-dirs.dirs
 user-dirs.locale
