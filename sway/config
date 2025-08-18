@@ -33,11 +33,7 @@ set $menu wmenu-run
 set $web-browser firefox
 
 # Set wallpaper
-set $bg-wall 'barrel-rifle.jpg'
-set $lock-wall 'blue-screen.jpg'
-
-# Swaylock config
-set $lock 'swaylock -f --color "dae8e0" --image ~/Pictures/$lock-wall --scaling fill'
+set $bg-wall '~/Pictures/static/barrel-rifle.jpg'
 
 # Exec program once at the start of sway session
 exec fcitx5 -dr
@@ -45,7 +41,7 @@ exec systemctl --user import-environment
 
 # output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # mode output "stretch", "fill", "fit", "center", "tile"
-output * bg ~/Pictures/$bg-wall fit
+output * bg $bg-wall fit
 
 # setting only this monitor, use * for apply all other display
 output eDP-1 {
@@ -67,9 +63,9 @@ output eDP-1 {
 # Example configuration:
 
 exec swayidle -w \
-  timeout 300 "$lock" \
+  timeout 300 'swaylock' \
   timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-  before-sleep "$lock"
+  before-sleep 'swaylock'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when

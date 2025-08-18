@@ -3,32 +3,14 @@ font=Mononoki Nerd Font
 font-size=16
 
 # Background image
-image=~/Pictures/blue-screen.jpg
+image=~/Pictures/static/blue-screen.jpg
 scaling=fill
 
-# Password config
+daemonize
+show-failed-attempts
+hide-keyboard-layout
 ignore-empty-password
 
 # Indicator config
-indicator-radius=4
-indicator-thickness=4
-
-# Ring config
-
-bs-hl-color=020304
-
-color=0056B3
-
-ring-color=ffffff
-inside-color=00000088
-text-color=000000
-
-layout-bg-color=00000088
-layout-text-color=ffffff
-
-inside-ver-color=007ACCcc
-ring-ver-color=007ACCcc
-inside-wrong-color=ff0000cc
-ring-wrong-color=ff0000cc
-
-
+indicator-radius=50
+indicator-thickness=10
