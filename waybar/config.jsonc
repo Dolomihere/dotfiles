@@ -6,6 +6,10 @@
   "modules-center": ["clock"],
   "modules-right": ["backlight", "network", "cpu", "memory", "temperature", "battery", "disk"],
 
+  "sway/workspaces": {
+    "disable-scroll": true
+  },
+
   "custom/icon": {
     "format": "   ",
     "tooltip": false,
@@ -17,10 +21,6 @@
       //"suspend": "systemctl suspend",
       //"hibernate": "systemctl hibernate"
     }
-  },
-  
-  "sway/workspaces": {
-    "disable-scroll": true
   },
 
   "custom/weather": {

@@ -16,7 +16,7 @@
 @define-color storage @mountain_grey;
 
 * {
-  font: 16 "Mononoki Nerd Font";
+  font: 16px "Mononoki Nerd Font";
   border-radius: 0;
   min-height: 0;
 }

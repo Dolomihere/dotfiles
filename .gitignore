@@ -1,5 +1,6 @@
 # List of git ignore file upload to github that in config i don't need
 
+azpainter/
 Awesomeness/
 chromium/
 dconf/
