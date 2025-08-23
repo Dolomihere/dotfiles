@@ -2,11 +2,11 @@
   "spacing": 0,
   "reload_style_on_change": true,
 
-  "modules-left": ["custom/icon", "sway/workspaces", "custom/weather"],
+  "modules-left": ["custom/icon", "niri/workspaces", "custom/weather"],
   "modules-center": ["clock"],
   "modules-right": ["backlight", "network", "cpu", "memory", "temperature", "battery", "disk"],
 
-  "sway/workspaces": {
+  "niri/workspaces": {
     "disable-scroll": true
   },
 
@@ -24,7 +24,7 @@
   },
 
   "custom/weather": {
-    "exec": "curl -s -A 'Hello from Nixos' 'https://wttr.in/?format=1'",
+    "exec": "/run/current-system/sw/bin/curl -s -A 'Hello from Nixos' 'https://wttr.in/?format=1'",
     "interval": 10800,
     "format": "{}",
     "tooltip": false,
@@ -34,14 +34,14 @@
   "clock": {
     "format": "󱑎  {:%I:%M %p}",
     "format-alt": "  {:%a, %d %b %Y}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "tooltip-format": "<big>Calendar</big>\n<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode"          : "month",
       "mode-mon-col"  : 3,
       "format": {
         "months":     "<span color='#d3c6aa'><b>{}</b></span>",
         "days":       "<span color='#e67e80'>{}</span>",
-        "weeks":      "<span color='#a7c080'><b>W{}</b></span>",
+        "weeks":      "<span color='#a7c080'><b>{:%W}</b></span>",
         "weekdays":   "<span color='#7fbbb3'><b>{}</b></span>",
         "today":      "<span color='#dbbc7f'><b><u>{}</u></b></span>"
       }
@@ -51,10 +51,10 @@
   "backlight": {
     "format": "󰛩 {percent}%",
     "tooltip": false,
-    "on-click": "brightnessctl set +5%",
-    "on-click-right": "brightnessctl set 5%-",
-    "on-scroll-up": "brightnessctl set +1%",
-    "on-scroll-down": "brightnessctl set 1%-"
+    "on-click": "/run/current-system/sw/bin/brightnessctl set +5%",
+    "on-click-right": "/run/current-system/sw/bin/brightnessctl set 5%-",
+    "on-scroll-up": "/run/current-system/sw/bin/brightnessctl set +1%",
+    "on-scroll-down": "/run/current-system/sw/bin/brightnessctl set 1%-"
   },
   
   "network": {

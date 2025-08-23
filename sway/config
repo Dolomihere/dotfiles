@@ -45,7 +45,7 @@ output * bg $bg-wall fit
 
 # setting only this monitor, use * for apply all other display
 output eDP-1 {
-  mode 1920x1080@60Hz
+  mode 1920x1080@60.020Hz
   position 0,0
   scale 1
   transform normal
@@ -62,10 +62,10 @@ output eDP-1 {
 #sway
 # Example configuration:
 
-exec swayidle -w \
-  timeout 300 'swaylock' \
+exec /run/current-system/sw/bin/swayidle -w \
+  timeout 300 '/run/current-system/sw/bin/swaylock' \
   timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-  before-sleep 'swaylock'
+  before-sleep '/run/current-system/sw/bin/swaylock'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -198,5 +198,5 @@ bindsym $mod+r mode "resize"
 # bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
 
 # Keybind for light display up and down mine is F11 and F12 using Fn bind
-bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
-bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym --locked XF86MonBrightnessDown exec /run/current-system/sw/bin/brightnessctl set 10%-
+bindsym --locked XF86MonBrightnessUp exec /run/current-system/sw/bin/brightnessctl set 10%+
