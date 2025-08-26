@@ -3,13 +3,13 @@
 
   "logo": {
     "type": "kitty-icat",
-    "source": "~/Pictures/non-static/cry.gif",
-    // "width": 35,
-    // "height": 18,
+    "source": "~/Pictures/static/miku-gyari.jpg",
+    "width": 40,
+    "height": 20,
     "padding": {
       "top": 0,
-      "left": 1,
-      "right": 4
+      "left": 0,
+      "right": 0
     },
     "position": "left"
   },
@@ -17,7 +17,7 @@
   "display": {
     "separator": ": ",
     "constants": [
-      "──────────────────────────"
+      "───────────────────────────"
     ],
     "key": {
       "type": "string",
@@ -39,31 +39,31 @@
     },
     {
       "type": "monitor",
-      "key": "󰍹  Res ",
+      "key": "├ 󰍹  Res ",
       "keyColor": "white",
       "outputColor": "white"
     },
     {
       "type": "cpu",
-      "key": "󰍛  Cpu ",
+      "key": "├ 󰍛  Cpu ",
       "keyColor": "yellow",
       "outputColor": "yellow"
     },
     {
       "type": "gpu",
-      "key": "󰾲  Gpu ",
+      "key": "├ 󰾲  Gpu ",
       "keyColor": "green",
       "outputColor": "green"
     },
     {
       "type": "memory",
-      "key": "  Memory ",
+      "key": "├   Memory ",
       "keyColor": "magenta",
       "outputColor": "magenta"
     },
     {
       "type": "disk",
-      "key": "  Disk ",
+      "key": "└   Disk ",
       "keyColor": "dim_",
       "outputColor": "dim_"
     },
@@ -80,49 +80,37 @@
     },
     {
       "type": "os",
-      "key": "  OS ",
+      "key": "├   OS ",
       "keyColor": "white",
       "outputColor": "white"
     },
     {
       "type": "kernel",
-      "key": "  Kernel ",
+      "key": "├   Kernel ",
       "keyColor": "green",
       "outputColor": "green"
     },
     {
       "type": "packages",
-      "key": "󰏖  Packages ",
+      "key": "├ 󰏖  Packages ",
       "keyColor": "magenta",
       "outputColor": "magenta"
     },
     {
       "type": "shell",
-      "key": "  Shell ",
+      "key": "├   Shell ",
       "keyColor": "cyan",
       "outputColor": "cyan"
     },
     {
-      "type": "terminal",
-      "key": "  Terminal ",
-      "keyColor": "blue",
-      "outputColor": "blue"
-    },
-    {
-      "type": "wm",
-      "key": "  Wm ",
-      "keyColor": "green",
-      "outputColor": "green"
-    },
-    {
       "type": "uptime",
-      "key": "  Uptime ",
+      "key": "├   Uptime ",
       "keyColor": "yellow",
       "outputColor": "yellow"
     },
     {
       "type": "command",
-      "key": "  OS Age ",
+      "key": "└   OS Age ",
       "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days",
       "keyColor": "dim_",
       "outputColor": "dim_"
@@ -132,14 +120,26 @@
       "format": "├{$1} {#1}Current Linux Themes{#} {$1}┤"
     },
     {
+      "type": "wm",
+      "key": "  Wm ",
+      "keyColor": "green",
+      "outputColor": "green"
+    },
+    {
+      "type": "terminal",
+      "key": "├   Terminal ",
+      "keyColor": "blue",
+      "outputColor": "blue"
+    },
+    {
       "type": "terminalfont",
-      "key": "  Font ",
+      "key": "├   Font ",
       "keyColor": "red",
       "outputColor": "red"
     },
     {
       "type": "colors",
-      "key": "  Color ",
+      "key": "└   Color ",
       "keyColor": "default",
       "symbol": "circle"
     },
