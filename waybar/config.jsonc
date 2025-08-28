@@ -105,7 +105,7 @@
   },
 
   "disk": {
-    "format": "󰋊 {percentage_used}%",
+    "format": "{percentage_used}% ",
     "tooltip-format": "{used} space used out of {total} on Nixos",
     "path": "/"
   }
